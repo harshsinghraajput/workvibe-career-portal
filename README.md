@@ -9,16 +9,16 @@ Frontend Developer Assignment — Career Portal for candidates to browse jobs an
 ## Screenshots
 
 ### Home Page
-![Home Page](docs/screenshots/home.png)
+![Home Page](Index.png)
 
 ### Job Listings / Hot Roles
-![Job Listings](docs/screenshots/jobs.png)
+![Job Listings](JobOpenings.png)
 
 ### Apply Form
-![Apply Form](docs/screenshots/apply.png)
+![Apply Form](FormFill.png)
 
 ### Thank You Page
-![Thank You Page](docs/screenshots/thank-you.png)
+![Thank You Page](ThanksPage.png)
 
 ---
 
