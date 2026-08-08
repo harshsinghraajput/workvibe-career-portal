@@ -6,6 +6,22 @@ Frontend Developer Assignment — Career Portal for candidates to browse jobs an
 
 ---
 
+## Screenshots
+
+### Home Page
+![Home Page](docs/screenshots/home.png)
+
+### Job Listings / Hot Roles
+![Job Listings](docs/screenshots/jobs.png)
+
+### Apply Form
+![Apply Form](docs/screenshots/apply.png)
+
+### Thank You Page
+![Thank You Page](docs/screenshots/thank-you.png)
+
+---
+
 ## Tech Stack
 
 | Technology | Usage |
@@ -53,7 +69,7 @@ npm start
 - **Pagination**  
 - **Job details** — Description, responsibilities, skills, benefits, company info, apply CTA  
 - **Apply form** — All required fields + validations  
-- **Thank you page** — Exact confirmation message from the assignment  
+- **Thank you page** — Confirmation after successful application  
 - **Loading / empty / 404 states**  
 - **Responsive** — Mobile, tablet, desktop  
 
@@ -64,62 +80,18 @@ npm start
 - Resume file type (PDF / Word)  
 - Max file size (5 MB)  
 
-### Extra credit / bonus
+### Bonus / extra credit
 - Reusable UI components (`Header`, `Footer`, `JobCard`, `ApplyButton`)  
-- Advanced filtering + **URL-based filter persistence** (query params)  
+- Advanced filtering + **URL-based filter persistence**  
+- File upload preview  
+- Form auto-save to localStorage  
+- Applied-job tracking  
+- Accessibility (labels, semantic HTML, ARIA)  
 - Excellent responsive design  
-- Accessibility basics (labels, focus, semantic HTML, ARIA where needed)  
-- **File upload preview** (file name shown after select)  
-- **Form auto-save to localStorage** (draft restores on return)  
-- Applied-job tracking (localStorage)  
-- 3D-style card hover + click press animations  
-- Auto-redirect home 20s after thank-you  
 
 ---
 
-## Project Structure (Next.js equivalent)
-
-```
-src/
- ├── app/                          # Routes (App Router)
- │    ├── page.tsx                 # Home
- │    ├── layout.tsx
- │    ├── globals.css
- │    ├── not-found.tsx
- │    ├── jobs/
- │    │    ├── page.tsx            # Job listing
- │    │    └── [id]/page.tsx      # Job details
- │    ├── apply/
- │    │    └── [id]/page.tsx      # Application form
- │    └── thank-you/page.tsx
- ├── components/                   # Shared / reusable UI
- │    ├── Header.tsx
- │    ├── Footer.tsx
- │    ├── JobCard.tsx
- │    └── ApplyButton.tsx
- ├── data/                         # Mock API / static data
- │    └── jobs.ts
- ├── lib/                          # Services / utilities
- │    └── applied.ts               # Applied-job state (localStorage)
- └── types/                        # Models
-      └── job.ts
-```
-
-Mapping to the recommended Angular-style layout:
-
-| Angular-style folder | This project |
-|----------------------|--------------|
-| `features/home` | `app/page.tsx` |
-| `features/jobs` | `app/jobs/page.tsx` |
-| `features/job-details` | `app/jobs/[id]/page.tsx` |
-| `features/apply` | `app/apply/[id]/page.tsx` |
-| `shared` / components | `components/` |
-| `services` | `lib/` + `data/` |
-| `models` | `types/` |
-
----
-
-## Thank You Message (after apply)
+## Thank You Message
 
 ```
 Thank you for applying.
@@ -128,37 +100,52 @@ Our recruitment team will contact you if your profile matches our requirements.
 
 ---
 
+## Project Structure
+
+```
+src/
+ ├── app/
+ │    ├── page.tsx              # Home
+ │    ├── layout.tsx
+ │    ├── not-found.tsx
+ │    ├── jobs/
+ │    │    ├── page.tsx         # Listing
+ │    │    └── [id]/page.tsx   # Details
+ │    ├── apply/[id]/page.tsx  # Application form
+ │    └── thank-you/page.tsx
+ ├── components/
+ ├── data/jobs.ts
+ ├── lib/applied.ts
+ └── types/job.ts
+docs/
+ └── screenshots/               # README images
+```
+
+---
+
 ## Assumptions
 
-- No real backend — jobs come from static mock data  
-- Resume is validated client-side only (not uploaded to a server)  
-- “Applied” status and form drafts stored in `localStorage`  
-- Contact: **Reach us** → `mailto:iaamharshsinghrajput@gmail.com`  
+- No real backend — jobs from static mock data  
+- Resume validated client-side only  
+- Applied status & form drafts in `localStorage`  
+- **Reach us** → mailto:iaamharshsinghrajput@gmail.com  
 
 ---
 
 ## Known Limitations
 
-- No authentication / user accounts  
+- No authentication  
 - No real file upload API  
-- Salary sort uses simple number parsing from salary strings  
+- Salary sort uses simple number parsing  
 
 ---
 
 ## Future Improvements
 
-- Real API / JSON Server  
-- Dark/light theme toggle  
-- Bookmark jobs  
-- Unit tests (Jest / Vitest + React Testing Library)  
+- Real API integration  
+- Unit tests  
 - Skeleton loaders  
 - PWA support  
-
----
-
-## Git
-
-Meaningful commits were used during development (setup → features → filters → form → polish).
 
 ---
 
